@@ -26,7 +26,8 @@ Bước 1: LSTM sẽ quyết định thông tin nào sẽ được loại bỏ k
 qua tầng cổng quên. Cổng dùng hàm sigmoid với đầu vào là ht−1, xt và trả
 về một số nằm trong khoảng (0, 1). Giá trị này càng gần 0 nghĩa là thông tin
 ít quan trọng, giá trị càng gần 1 nghĩa là thông tin càng quan trọng.
-![image](https://github.com/datvu1502/Do_An_2/assets/118582440/e29e726a-7243-4819-a027-1906f979a9d1)
+![image](https://github.com/datvu1502/Do_An_2/assets/118582440/4daf75a7-aef1-42f7-869e-b629f8b664dd)
+
 
 • Bước 2: Xác định thông tin mới nào sẽ được lưu trữ trong trạng thái tế bào.
 Quá trình xác định này được chia làm 2 giai đoạn.
@@ -38,7 +39,8 @@ Giai đoạn 1: Sử dụng hàm sigmoid σ của cổng vào quyết định gi
 Giai đoạn 2: Sử dụng hàm tanh tạo ra một vector trạng thái mới C˜t sao cho
 C˜t có thể thêm vào trạng thái.
 
-![image](https://github.com/datvu1502/Do_An_2/assets/118582440/c2ac6f73-c80c-4dbb-b2d2-e01b45aee81d)
+![image](https://github.com/datvu1502/Do_An_2/assets/118582440/c8ce4c32-107c-4eab-85ac-83493a4fb538)
+
 
 Trong bước tiếp theo sẽ kết hợp 2 giá trị này để tạo ra cập nhật cho trạng
 thái tế bào
@@ -47,8 +49,8 @@ Bước 3: Cập nhật trạng thái tế bào cũ Ct−1 sang trạng thái t�
 Chúng ta sẽ nhân trạng thái cũ Ct−1 với ft để xác định thông tin nào sẽ được
 loại bỏ khỏi trạng thái tế bào cũ, sau đó sẽ cộng thêm trạng thái cập nhật
 mới it * C˜t. Trạng thái tế bào sẽ được cập nhật như hình dưới đây.
+![image](https://github.com/datvu1502/Do_An_2/assets/118582440/b286ebdd-ff36-47ca-9eb8-092b9c785471)
 
-![image](https://github.com/datvu1502/Do_An_2/assets/118582440/b37d91de-2f31-452f-abc8-06ea7136d2f1)
 
 Bước 4: Xác định đầu ra của nút, đầu ra này phụ thuộc vào trạng thái của tế
 bào vừa được cập nhật nhưng vẫn tiếp tục được chọn lọc. Đầu tiên, sử dụng
@@ -59,6 +61,62 @@ Sau đó, chúng ta đưa trạng thái tế bào
 vừa mới được cập nhật qua hàm tanh để có được giá trị nằm trong khoảng
 (-1, 1), rồi nhân với giá trị đầu ra ot vừa tìm được. Ta thu được giá trị cần
 dự đoán tại bước thứ t như hình dưới đây.
-![image](https://github.com/datvu1502/Do_An_2/assets/118582440/391e15c9-a5eb-48c6-81cf-e3bf273e10f9)
+![image](https://github.com/datvu1502/Do_An_2/assets/118582440/43abefd8-6509-4729-a654-f681de258650)
+
+
+# Thử nghiệm số
+Sau khi tìm hiểu lý thuyết về LSTM, trong báo cáo này áp dụng vào việc xây
+dựng mô hình dự báo chỉ số giá chứng khoán VN-Index.
+
+Chỉ số VN-Index là một chỉ số thị trường chứng khoán của Việt Nam, đại diện
+cho tất cả cổ phiếu niêm yết tại Sở Giao dịch Chứng khoán TP.HCM (HoSE). Chỉ
+số này được tính từ ngày thị trường chứng khoán Việt Nam đi vào hoạt động vào
+ngày 28/7/2000, với giá trị cơ sở ban đầu là 100 điểm.
+
+Chỉ số VN-Index được tính toán và thay đổi trong quá trình diễn ra giao dịch trên
+thị trường chứng khoán. Sự biến động về giá cổ phiếu sẽ làm thay đổi giá trị của
+chỉ số này.
+
+Sự biến động của chỉ số VN-Index phản ánh rủi ro hệ thống trong thị trường chứng
+khoán Việt Nam. Việc dự báo sự tăng giảm của VN-Index. có thể giúp các nhà
+đầu tư nhận biết chiều hướng biến động giá của các cổ phiếu trên thị trường này,
+đồng thời cung cấp thông tin về xu hướng và tình hình thị trường chứng khoán.
+
+Bộ dữ liệu sử dụng của chỉ số chứng khoán VN-Index trong khoảng thời gian từ
+ngày 1/10/2020 đến ngày 29/12/2023. Bộ dữ liệu lấy từ trang web investing.com
+
+## Tổng quan về bộ dữ liệu 
+•	Bộ dữ liệu bao gồm 814 dòng, 5 cột đại diện cho các trường dữ liệu:
+![tongquan2](https://github.com/datvu1502/Do_An_2/assets/118582440/0cd80344-3499-49c1-926b-5af600b47ec6)
+![bodl](https://github.com/datvu1502/Do_An_2/assets/118582440/a4809bfc-8214-4fcb-9dda-37ba59542968)
+
+
+–	Time: thời gian
+
+–	Open: giá mở cửa.
+
+–	High: giá cao nhất trong phiên giao dịch.
+
+–	Low: giá thấp nhất trong phiên giao dịch.
+
+–	Close: giá đóng cửa.
+
+Mô hình sử dụng chỉ số giá đóng cửa trong quá khứ để dự đoán giá đóng
+cửa trong tương lai, vì thế cần loại bỏ các trường không cần thiết và giữ lại trường giá đóng cửa để tiến hành xây dựng và huấn luyện mô hình. Chỉ số
+giá đóng cửa được thể hiện theo thời gian như sau:
+ ![hienthidl2](https://github.com/datvu1502/Do_An_2/assets/118582440/08e60772-220a-47e7-86d9-87cc9a59cc46)
+
+
+•	Tiến hành chia bộ dữ liệu thành 2 tập train và test, với tỷ lệ 80% cho tập train và 20% cho tập test.
+
+•	Mô hình LSTM yêu cầu bộ dữ liệu là 1 chuỗi, mô hình sẽ sử dụng 30 ngày trước đó làm yếu tố quyết định và dự đoán giá cổ phiếu cho ngày thứ 31.
+
+# Xây dựng mô hình LSTM
+Sử dụng thư viện Keras trong Python để xây dựng mô hình LSTM:
+
+from keras.models import Sequential from keras.layers import Dense, LSTM
+model = Sequential() model.add(LSTM(128, return_sequences=True, input_shape=(x_train.shape[1], 1))) model.add(Dense(25)) model.add(Dense(1))
+
+Mô hình sử dụng hàm mất mát Mean Squared Error và thuật toán tối ưu Adam để huấn luyện mô hình.
 
 
