@@ -87,7 +87,9 @@ ngày 1/10/2020 đến ngày 29/12/2023. Bộ dữ liệu lấy từ trang web i
 
 ## Tổng quan về bộ dữ liệu 
 •	Bộ dữ liệu bao gồm 814 dòng, 5 cột đại diện cho các trường dữ liệu:
+
 ![tongquan2](https://github.com/datvu1502/Do_An_2/assets/118582440/0cd80344-3499-49c1-926b-5af600b47ec6)
+
 ![bodl](https://github.com/datvu1502/Do_An_2/assets/118582440/a4809bfc-8214-4fcb-9dda-37ba59542968)
 
 
@@ -114,9 +116,16 @@ giá đóng cửa được thể hiện theo thời gian như sau:
 # Xây dựng mô hình LSTM
 Sử dụng thư viện Keras trong Python để xây dựng mô hình LSTM:
 
-from keras.models import Sequential from keras.layers import Dense, LSTM
-model = Sequential() model.add(LSTM(128, return_sequences=True, input_shape=(x_train.shape[1], 1))) model.add(Dense(25)) model.add(Dense(1))
+from keras.models import Sequential 
+
+from keras.layers import Dense, LSTM
+
+model = Sequential() model.add(LSTM(128, return_sequences=True, input_shape=(x_train.shape[1], 1))) 
+
+model.add(Dense(25)) model.add(Dense(1))
 
 Mô hình sử dụng hàm mất mát Mean Squared Error và thuật toán tối ưu Adam để huấn luyện mô hình.
+
+
 
 
