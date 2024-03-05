@@ -162,6 +162,23 @@ So sánh giá trị dự đoán và giá trị thực tế qua đồ thị theo 
 Đánh giá sai số:
 ![image](https://github.com/datvu1502/Do_An_2/assets/118582440/09c0052b-9a0f-47a0-9a5a-130fc90b70a8)
 
+Dự báo chỉ số thị trường chứng khoán Việt Nam sử dụng mô hình LSTM có thể
+có sự khác biệt lớn so với giá trị thực tế trong một số ngày giao dịch. Điều này là
+do thị trường chứng khoán Việt Nam chịu ảnh hưởng mạnh từ nhiều yếu tố như
+tâm lý nhà đầu tư, tác động từ các thị trường chứng khoán khác và thông tin về
+sự thay đổi chính sách.
+
+Do đó, nhà đầu tư nên kết hợp kết quả từ mô hình dự báo với phân tích kỹ thuật
+và thường xuyên quan sát để có cái nhìn đúng đắn và chính xác về sự biến động
+của thị trường chứng khoán. Mô hình dự báo có thể cung cấp một cơ sở dự đoán,
+nhưng không đảm bảo rằng các dự báo sẽ hoàn toàn chính xác trong mọi trường
+hợp.
+
+Bằng cách kết hợp phân tích kỹ thuật và theo dõi thường xuyên, nhà đầu tư có
+thể nhận biết các yếu tố tác động đến thị trường và điều chỉnh quyết định đầu tư
+một cách linh hoạt. Điều này giúp tăng khả năng đưa ra quyết định đúng đắn và
+tận dụng mọi cơ hội trong môi trường thị trường chứng khoán đầy biến động.
+
 
 
 
