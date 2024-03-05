@@ -112,19 +112,55 @@ giá đóng cửa được thể hiện theo thời gian như sau:
 •	Tiến hành chia bộ dữ liệu thành 2 tập train và test, với tỷ lệ 80% cho tập train và 20% cho tập test.
 
 •	Mô hình LSTM yêu cầu bộ dữ liệu là 1 chuỗi, mô hình sẽ sử dụng 30 ngày trước đó làm yếu tố quyết định và dự đoán giá cổ phiếu cho ngày thứ 31.
+![train](https://github.com/datvu1502/Do_An_2/assets/118582440/7e095de9-34be-477f-b859-20872e66a475)
 
 # Xây dựng mô hình LSTM
 Sử dụng thư viện Keras trong Python để xây dựng mô hình LSTM:
 
-from keras.models import Sequential 
+![image](https://github.com/datvu1502/Do_An_2/assets/118582440/e0ca2d1a-eae0-473e-b9fc-6b707934de5f)
 
-from keras.layers import Dense, LSTM
-
-model = Sequential() model.add(LSTM(128, return_sequences=True, input_shape=(x_train.shape[1], 1))) 
-
-model.add(Dense(25)) model.add(Dense(1))
 
 Mô hình sử dụng hàm mất mát Mean Squared Error và thuật toán tối ưu Adam để huấn luyện mô hình.
+![image](https://github.com/datvu1502/Do_An_2/assets/118582440/9aabe655-cec4-4150-8c8d-55c84aadd1ce)
+
+Sau khi tạo mô hình và chuẩn bị dữ liệu, mô hình còn yêu cầu một số tham
+số như sau:
+
+– batchsize: là số lượng dữ liệu cho mỗi lần tính và cập nhật hệ số, huấn
+luyện mô hình với batchsize = 32
+
+– epochs: số lượng epoch thực hiện trong quá trình training. (Một epoch
+là một lần duyệt qua hết các dữ liệu trong tập training set). Mô hình
+thực hiện qua 100 lần.
+
+
+![loss](https://github.com/datvu1502/Do_An_2/assets/118582440/123c5710-75ea-42c5-b96f-1ccb8341cc95)
+
+Từ kết qua hiển thị trên ta thấy được qua quá trình huấn luyện, lần lượt qua
+các lần duyệt, giá trị của hàm mất mát đang có xu hướng giảm dần và đạt
+tới giá trị tối ưu gần về 0. Chúng ta có thể thấy rõ hơn về sự giảm dần của
+hàm mất mát qua đồ thị sau:
+![losspng](https://github.com/datvu1502/Do_An_2/assets/118582440/d6eba03b-62ca-4749-9920-dd410b7f5232)
+
+## Dự báo 
+Sau khi xây dựng xong mô hình LSTM, tiến hành sử dụng mô hình để dự báo kết quả cho tương lai với input là tập dữ liệu test:
+![image](https://github.com/datvu1502/Do_An_2/assets/118582440/b4597f44-98bf-4b11-a759-844cc4103768)
+
+Kết quả dự báo của mô hình như sau:
+![dubao](https://github.com/datvu1502/Do_An_2/assets/118582440/813d9e21-ebcb-479b-b2ce-c34997cd4cf4)
+
+Biểu đồ so sánh giá dự báo và giá cổ phiếu thực tế:
+![ketqua](https://github.com/datvu1502/Do_An_2/assets/118582440/36c9ffdb-e9b2-4a66-a3a3-421f7c4872c8)
+
+# Đánh giá mô hình
+So sánh giá trị dự đoán và giá trị thực tế qua đồ thị theo thời gian:
+![chitiet2](https://github.com/datvu1502/Do_An_2/assets/118582440/555cb234-db42-46f2-8c7b-e5f700b3f496)
+
+Đánh giá sai số:
+![image](https://github.com/datvu1502/Do_An_2/assets/118582440/1450e19e-8e6e-4b6d-8f26-ba9b856c67ed)
+
+
+
 
 
 
