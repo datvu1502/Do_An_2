@@ -117,7 +117,8 @@ giá đóng cửa được thể hiện theo thời gian như sau:
 # Xây dựng mô hình LSTM
 Sử dụng thư viện Keras trong Python để xây dựng mô hình LSTM:
 
-![image](https://github.com/datvu1502/Do_An_2/assets/118582440/e0ca2d1a-eae0-473e-b9fc-6b707934de5f)
+![image](https://github.com/datvu1502/Do_An_2/assets/118582440/ce0395dc-9a61-45e8-bbe4-63d40e512cda)
+
 
 
 Mô hình sử dụng hàm mất mát Mean Squared Error và thuật toán tối ưu Adam để huấn luyện mô hình.
