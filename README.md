@@ -123,7 +123,8 @@ Sử dụng thư viện Keras trong Python để xây dựng mô hình LSTM:
 
 
 Mô hình sử dụng hàm mất mát Mean Squared Error và thuật toán tối ưu Adam để huấn luyện mô hình.
-![image](https://github.com/datvu1502/Do_An_2/assets/118582440/9aabe655-cec4-4150-8c8d-55c84aadd1ce)
+![image](https://github.com/datvu1502/Do_An_2/assets/118582440/f05eb2ef-be72-4264-b64e-c45e6661f5b3)
+
 
 Sau khi tạo mô hình và chuẩn bị dữ liệu, mô hình còn yêu cầu một số tham
 số như sau:
