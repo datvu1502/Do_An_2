@@ -1,4 +1,7 @@
 # MÔ HÌNH LSTM - LONG SHORT TERM MEMORY TRONG PHÂN TÍCH GIÁ CHỨNG KHOÁN
+Điểm số: 9.15
+--
+
 Giảng viên hướng dẫn: ThS. Lê Xuân Lý
 
 Sinh viên thực hiện: Vũ Thành Đạt
@@ -9,8 +12,6 @@ Lớp: Hệ thống thông tin 01-K65
 
 Học kỳ: 2023.1
 
-Điểm số: 9.15
---
 ============================
 
 Trong thời đại công nghệ hiện đại bùng nổ, đặc biệt với sự ra đời của trí tuệ nhân tạo
