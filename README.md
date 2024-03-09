@@ -1,4 +1,12 @@
 # MÔ HÌNH LSTM - LONG SHORT TERM MEMORY TRONG PHÂN TÍCH GIÁ CHỨNG KHOÁN
+Giảng viên hướng dẫn: ThS. Lê Xuân Lý
+
+Sinh viên thực hiện: Vũ Thành Đạt
+
+MSSV:      20206275
+
+Lớp: Hệ thống thông tin 01-K65
+
 Trong thời đại công nghệ hiện đại bùng nổ, đặc biệt với sự ra đời của trí tuệ nhân tạo
 đang trở nên phổ biến hơn bao giờ hết. Sự ra đời của máy học, trí tuệ nhân tạo, mạng
 nơ-ron và cấc công nghệ học tập hiện đại đã giúp cuộc sống con người trở nên ngày càng
