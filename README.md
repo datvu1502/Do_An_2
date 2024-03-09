@@ -1,5 +1,5 @@
 # MÔ HÌNH LSTM - LONG SHORT TERM MEMORY TRONG PHÂN TÍCH GIÁ CHỨNG KHOÁN
-Điểm số: 9.15
+Điểm số: 9.15 (Quá trình: 9.5/ Cuối kỳ: 9)
 --
 
 Giảng viên hướng dẫn: ThS. Lê Xuân Lý
