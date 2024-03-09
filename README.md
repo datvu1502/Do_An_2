@@ -170,7 +170,6 @@ So sánh giá trị dự đoán và giá trị thực tế qua đồ thị theo 
 ![chitiet2](https://github.com/datvu1502/Do_An_2/assets/118582440/555cb234-db42-46f2-8c7b-e5f700b3f496)
 
 Đánh giá sai số:
-
 ![image](https://github.com/datvu1502/Do_An_2/assets/118582440/09c0052b-9a0f-47a0-9a5a-130fc90b70a8)
 
 Dự báo chỉ số thị trường chứng khoán Việt Nam sử dụng mô hình LSTM có thể
