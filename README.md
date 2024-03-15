@@ -1,4 +1,4 @@
-# Đồ án 2: PHÂN TÍCH GIÁ CHỨNG KHOÁN BẰNG MÔ HÌNH LSTM-LONG SHORT TERM MEMORY TRONG 
+# Đồ án 2: PHÂN TÍCH GIÁ CHỨNG KHOÁN BẰNG MÔ HÌNH LSTM-LONG SHORT TERM MEMORY  
 Điểm số: 9.15 (Quá trình: 9.5 / Cuối kỳ: 9)
 --
 
