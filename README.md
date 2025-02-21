@@ -35,6 +35,7 @@ là xt và ht−1 là trạng thái ẩn của nút t − 1. Điểm đặc bi�
 trạng thái tế bào(Cell state) Ct - chính đường chạy thông ngang phía trên của sơ
 đồ. Trạng thái tế bào là một dạng giống như băng truyền, chạy xuyên suốt qua
 các nút mạng. Vì vậy mà các thông tin có thể dễ dàng truyền đi thông suốt.
+![image](https://github.com/user-attachments/assets/d1a3db3f-624f-4188-9e7b-15a413211401)
 
 ## Quá trình thực hiện mô hình LSTM
 Bước 1: LSTM sẽ quyết định thông tin nào sẽ được loại bỏ khỏi tế bào thông
